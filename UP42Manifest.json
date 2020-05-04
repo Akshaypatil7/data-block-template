@@ -1,0 +1,22 @@
+{
+  "_up42_specification_version": 2,
+  "name": "a-data-block",
+  "type": "data",
+  "tags": ["template"],
+  "display_name": "Data Block Template",
+  "description": "This is a template datablock.",
+  "parameters": {
+    "ids": {"type": "array", "default": null}
+  },
+  "machine": {
+    "type": "small"
+  },
+  "input_capabilities": {},
+  "output_capabilities": {
+      "raster": {
+        "up42_standard": {
+          "format": "GTiff"
+        }
+      }
+  }
+}
