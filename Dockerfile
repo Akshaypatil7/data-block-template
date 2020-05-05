@@ -10,7 +10,6 @@ ARG BUILD_DIR=.
 ARG manifest
 LABEL "up42_manifest"=$manifest
 
-
 # Working directory setup.
 WORKDIR /block
 COPY $BUILD_DIR/requirements.txt /block
@@ -20,9 +19,6 @@ RUN pip install -r requirements.txt
 
 # Copy the code into the container.
 COPY $BUILD_DIR/src /block/src
-
-# Copy data into the container.
-COPY $BUILD_DIR/data /block/data
 
 # Invoke run.py.
 CMD ["python", "/block/src/run.py"]
