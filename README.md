@@ -3,6 +3,42 @@
 
 This is a template for building data blocks.
 
+## Contents
+
+```
+# File that defines the docker image to be built - most likely you don't have to change this file.
+├── Dockerfile
+# Make utilities, defines what happens when running `make something`. Change the name of the docker image in the DOCKER_TAG variable.
+├── Makefile
+├── README.md
+# The manifest of this block (see validate manifest section for more). Change name and other meta properties.
+├── UP42Manifest.json
+# A coverage badge. Shows the test coverage - should be green.
+├── coverage.svg
+# The end to end test for this block. Ensures docker image is built built correctly. Change image name to set to the DOCKER_TAG.
+├── e2e.py
+# Defines python linter ruleset.
+├── pylintrc
+# Python requirements for development - includes black, pytest, pylint, etc.
+├── requirements-dev.txt
+# Actual block python requirements shipped in docker image.
+├── requirements.txt
+# Folder that should include all the code for this block.
+├── src
+        # Main block code. Add more modules if needed.
+│   ├── data_block.py
+        # This is the block entry point - should call `run` method.
+│   └── run.py
+# Bash file that defines test run (runs pytest with settings, formats code, generates coverage badge)
+├── test.sh
+# Folder that includes all test code.
+└── tests
+        # Where you can import all needed modules for testing.
+    ├── context.py
+        # Actual tests. Recommend one test file per module.
+    └── test_data_block.py
+```
+
 ## Requirements
 
 This template requires the **Mac or Ubuntu bash**.
