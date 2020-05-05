@@ -17,7 +17,7 @@ In order to use this template to create blocks for the UP42 platform the followi
 
 ## Instructions
 
-The following step-by-step instructions will guide you through setting up, dockerizing and pushing this template block to UP42.
+The following step-by-step instructions will guide you through setting up, dockerizing and pushing a block using this template to UP42.
 
 ### Installing the required libraries
 
@@ -25,6 +25,7 @@ First create a new virtual environment called `up42-data-block`, for example by 
 [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/):
 
 ```bash
+# Use the block name as the environment name
 mkvirtualenv --python=$(which python3.7) up42-data-block
 ```
 
@@ -55,6 +56,7 @@ the previous step. Run the unit tests via:
 ```bash
 make test
 ```
+
 ### Validate the manifest
 
 Then test if the block manifest is valid. The
@@ -82,7 +84,6 @@ make build
 Run the `e2e` tests with:
 
 ```bash
-
 make e2e
 ```
 
@@ -106,19 +107,19 @@ Click on "`PUSH a BLOCK to THE PLATFORM`" and copy your USERID from the command 
 
 Replace `<User-ID>` with your UP42 User-ID.
 ```bash
-docker build . -t registry.up42.com/<USER-ID>/sharpening:1.0 --build-arg manifest="$(cat UP42Manifest.json)"
+docker build . -t registry.up42.com/<USER-ID>/a-data-block:1.0 --build-arg manifest="$(cat UP42Manifest.json)"
 
 # Example:
-docker build . -t registry.up42.com/6760d08e-54e3-4f1c-b22e-6ba605ec7592/sharpening:1.0 --build-arg manifest="$(cat UP42Manifest.json)"
+docker build . -t registry.up42.com/6760d08e-54e3-4f1c-b22e-6ba605ec7592/a-data-block:1.0 --build-arg manifest="$(cat UP42Manifest.json)"
 ```
 
 Now you can finally push the image to the UP42 docker registry. Replace `<User-ID>` with your UP42 User-ID.
 
 ```bash
-docker push registry.up42.com/<USER-ID>/sharpening:1.0
+docker push registry.up42.com/<USER-ID>/a-data-block:1.0
 
 # Example:
-docker push registry.up42.com/6760d08e-54e3-4f1c-b22e-6ba605ec7592/sharpening:1.0
+docker push registry.up42.com/6760d08e-54e3-4f1c-b22e-6ba605ec7592/a-data-block:1.0
 ```
 
 **Success!** The block will now appear in the [UP42 custom blocks menu](https://console.up42.com/custom-blocks/) menu
