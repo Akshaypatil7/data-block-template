@@ -4,7 +4,7 @@
   "type": "data",
   "tags": ["template"],
   "display_name": "Data Block Template",
-  "description": "This is a template datablock.",
+  "description": "This is a template data block.",
   "parameters": {
     "ids": {"type": "array", "default": null}
   },
